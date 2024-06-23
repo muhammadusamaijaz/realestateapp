@@ -24,7 +24,7 @@ class HomeScreenStats extends StatelessWidget {
                       height: 0.42.sw,
                       child: Center(
                         child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 500),
+                          duration: const Duration(seconds: 1),
                           width: statsAnimationStarted ? 0.42.sw : 0,
                           height: statsAnimationStarted ? 0.42.sw : 0,
                           decoration: BoxDecoration(
@@ -34,7 +34,7 @@ class HomeScreenStats extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AnimatedSize(
-                                duration: const Duration(milliseconds: 500),
+                                duration: const Duration(seconds: 1),
                                 child: SizedBox(
                                     height: statsAnimationStarted ? 15.h : 0),
                               ),
@@ -72,7 +72,7 @@ class HomeScreenStats extends StatelessWidget {
                                   child: const Text("offers",
                                       overflow: TextOverflow.fade)),
                               AnimatedSize(
-                                duration: const Duration(milliseconds: 500),
+                                duration: const Duration(seconds: 1),
                                 child: SizedBox(
                                     height: statsAnimationStarted ? 15.h : 0),
                               ),
@@ -86,7 +86,7 @@ class HomeScreenStats extends StatelessWidget {
                       height: 0.42.sw,
                       child: Center(
                         child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 500),
+                          duration: const Duration(seconds: 1),
                           width: statsAnimationStarted ? 0.42.sw : 0,
                           height: statsAnimationStarted ? 0.42.sw : 0,
                           decoration: BoxDecoration(
@@ -96,7 +96,7 @@ class HomeScreenStats extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AnimatedSize(
-                                duration: const Duration(milliseconds: 500),
+                                duration: const Duration(seconds: 1),
                                 child: SizedBox(
                                     height: statsAnimationStarted ? 15.h : 0),
                               ),
@@ -137,7 +137,7 @@ class HomeScreenStats extends StatelessWidget {
                                   child: const Text("offers",
                                       overflow: TextOverflow.fade)),
                               AnimatedSize(
-                                duration: const Duration(milliseconds: 500),
+                                duration: const Duration(seconds: 1),
                                 child: SizedBox(
                                     height: statsAnimationStarted ? 15.h : 0),
                               ),
