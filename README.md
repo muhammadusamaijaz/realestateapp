@@ -1,4 +1,4 @@
-# moniepoint_flutter_assessment
+# Real Estate App
 
 A new Flutter project.
 
