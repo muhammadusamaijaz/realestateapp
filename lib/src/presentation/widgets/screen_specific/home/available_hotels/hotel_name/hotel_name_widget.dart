@@ -26,9 +26,9 @@ class HotelNameWidget extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
               child: AnimatedContainer(
-                duration: const Duration(seconds: 2),
+                duration: const Duration(seconds: 1),
                 padding: EdgeInsetsDirectional.symmetric(horizontal: 7.5.w),
-                width: hotelNameAnimationStarted ? double.maxFinite : 60.w,
+                width: hotelNameAnimationStarted ? 1.sw : 60.w,
                 height: 50.h,
                 decoration: BoxDecoration(color: Colors.grey.withOpacity(0.2)),
                 child: Row(

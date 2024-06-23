@@ -17,8 +17,14 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 @TypedGoRoute<SplashScreenRoute>(path: '/', name: SplashScreen.name)
 class SplashScreenRoute extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      SplashScreen(appUIParams: injector());
+  Page<Function> buildPage(BuildContext context, GoRouterState state) =>
+      CustomTransitionPage(
+          child: SplashScreen(appUIParams: injector()),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+              FadeTransition(
+                opacity: animation,
+                child: child,
+              ));
 }
 
 /// ----------------------------------------------------------------------------
