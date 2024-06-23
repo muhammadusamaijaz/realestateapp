@@ -21,7 +21,7 @@ class HomeScreenIntro extends StatelessWidget {
                 valueListenable: viewModel.hiNameAnimationStarted,
                 builder: (context, hiNameAnimationStarted, _) => AnimatedOpacity(
                       opacity: hiNameAnimationStarted ? 1 : 0,
-                      duration: const Duration(seconds: 1),
+                      duration: const Duration(milliseconds: 500),
                       onEnd: () =>
                           viewModel.startRelevantAnimationsAfterLoadingHiName(),
                       child: Text(
@@ -41,7 +41,7 @@ class HomeScreenIntro extends StatelessWidget {
                       children: [
                         AnimatedPositioned(
                           bottom: mainIntroTextAnimationStarted ? 0.h : -30.h,
-                          duration: const Duration(seconds: 1),
+                          duration: const Duration(milliseconds: 500),
                           child: Text(
                             "let's select your",
                             style: injector<AppTextStyles>()
@@ -58,7 +58,7 @@ class HomeScreenIntro extends StatelessWidget {
                       children: [
                         AnimatedPositioned(
                           bottom: mainIntroTextAnimationStarted ? 0.h : -30.h,
-                          duration: const Duration(seconds: 1),
+                          duration: const Duration(milliseconds: 500),
                           child: Text(
                             "perfect place",
                             style: injector<AppTextStyles>()

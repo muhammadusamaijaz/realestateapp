@@ -17,7 +17,7 @@ class HomeScreenAvailableHotels extends StatelessWidget {
               builder: (context, availableHotelsAnimationStarted, _) => Column(
                 children: [
                   AnimatedSize(
-                    duration: const Duration(seconds: 2),
+                    duration: const Duration(seconds: 1),
                     onEnd: () {
                       viewModel.startDashboardBottomNavItemAnimation();
                       viewModel.startHotelNamesAnimation();
