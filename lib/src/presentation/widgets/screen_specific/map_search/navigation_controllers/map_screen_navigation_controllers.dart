@@ -19,7 +19,7 @@ class MapScreenNavigationControllers extends StatelessWidget {
               builder: (context, controllerAnimationStarted, _) => Column(
                 children: [
                   AnimatedContainer(
-                    duration: const Duration(seconds: 1),
+                    duration: const Duration(milliseconds: 500),
                     width: controllerAnimationStarted ? 50.w : 0,
                     height: controllerAnimationStarted ? 50.h : 0,
                     decoration: BoxDecoration(
@@ -38,7 +38,7 @@ class MapScreenNavigationControllers extends StatelessWidget {
                   GestureDetector(
                     onTap: () => viewModel.showMoreNavigationControls(),
                     child: AnimatedContainer(
-                      duration: const Duration(seconds: 1),
+                      duration: const Duration(milliseconds: 500),
                       width: controllerAnimationStarted ? 50.w : 0,
                       height: controllerAnimationStarted ? 50.h : 0,
                       decoration: BoxDecoration(

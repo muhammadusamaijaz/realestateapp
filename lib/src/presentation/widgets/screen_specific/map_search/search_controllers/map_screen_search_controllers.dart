@@ -20,8 +20,9 @@ class MapScreenSearchControllers extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AnimatedContainer(
-                    duration: const Duration(seconds: 1),
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                    duration: const Duration(milliseconds: 500),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: controllerAnimationStarted ? 15.w : 0),
                     width: controllerAnimationStarted ? 0.7.sw : 0,
                     height: controllerAnimationStarted ? 40.h : 0,
                     decoration: BoxDecoration(
@@ -29,21 +30,20 @@ class MapScreenSearchControllers extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.r)),
                     child: Row(
                       children: [
-                        Expanded(
-                          flex: 1,
-                          child: AnimatedContainer(
-                            duration: const Duration(seconds: 1),
-                            width: controllerAnimationStarted ? 18.w : 0,
-                            height: controllerAnimationStarted ? 18.w : 0,
-                            child: AssetImageLoader(
-                                imagePath: injector<AppUIParams>()
-                                    .appAssets
-                                    .searchMapPng),
-                          ),
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 500),
+                          width: controllerAnimationStarted ? 18.w : 0,
+                          height: controllerAnimationStarted ? 18.w : 0,
+                          child: AssetImageLoader(
+                              imagePath: injector<AppUIParams>()
+                                  .appAssets
+                                  .searchMapPng),
                         ),
-                        SizedBox(width: 10.w),
+                        AnimatedSize(
+                            duration: const Duration(milliseconds: 500),
+                            child: SizedBox(
+                                width: controllerAnimationStarted ? 10.w : 0)),
                         Expanded(
-                          flex: 6,
                           child: AnimatedDefaultTextStyle(
                               style: injector<AppTextStyles>()
                                   .semiBold14
@@ -53,7 +53,7 @@ class MapScreenSearchControllers extends StatelessWidget {
                                       color: Colors.black),
                               overflow: TextOverflow.fade,
                               maxLines: 1,
-                              duration: const Duration(seconds: 1),
+                              duration: const Duration(milliseconds: 500),
                               child: const Text(
                                 "Saint Petersburg",
                                 overflow: TextOverflow.fade,
@@ -64,7 +64,7 @@ class MapScreenSearchControllers extends StatelessWidget {
                   ),
                   SizedBox(width: 10.w),
                   AnimatedContainer(
-                    duration: const Duration(seconds: 1),
+                    duration: const Duration(milliseconds: 500),
                     width: controllerAnimationStarted ? 40.h : 0,
                     height: controllerAnimationStarted ? 40.h : 0,
                     decoration: BoxDecoration(

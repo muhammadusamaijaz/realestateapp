@@ -22,8 +22,11 @@ class MapScreenMoreNavigationItems extends StatelessWidget {
                   onTap: () =>
                       viewModel.closeMoreNavigationControlsAndShowIconMarkers(),
                   child: AnimatedContainer(
-                    duration: const Duration(seconds: 1),
-                    padding: EdgeInsets.all(10.h),
+                    duration: const Duration(milliseconds: 500),
+                    padding: EdgeInsets.all(
+                        moreNavigationControllersMenuAnimationStarted
+                            ? 10.h
+                            : 0),
                     width: moreNavigationControllersMenuAnimationStarted
                         ? 150.w
                         : 0,
@@ -43,7 +46,7 @@ class MapScreenMoreNavigationItems extends StatelessWidget {
                           (index) => Row(
                                 children: [
                                   AnimatedContainer(
-                                    duration: const Duration(seconds: 1),
+                                    duration: const Duration(milliseconds: 500),
                                     width:
                                         moreNavigationControllersMenuAnimationStarted
                                             ? 20.h
@@ -63,10 +66,16 @@ class MapScreenMoreNavigationItems extends StatelessWidget {
                                           : Colors.grey.withOpacity(0.5),
                                     ),
                                   ),
-                                  SizedBox(width: 10.w),
+                                  AnimatedSize(
+                                      duration: const Duration(milliseconds: 500),
+                                      child: SizedBox(
+                                          width:
+                                              moreNavigationControllersMenuAnimationStarted
+                                                  ? 10.w
+                                                  : 0)),
                                   Expanded(
                                     child: AnimatedContainer(
-                                      duration: const Duration(seconds: 1),
+                                      duration: const Duration(milliseconds: 500),
                                       child: AnimatedDefaultTextStyle(
                                           style: injector<AppTextStyles>()
                                               .semiBold12
@@ -84,7 +93,7 @@ class MapScreenMoreNavigationItems extends StatelessWidget {
                                                           .withOpacity(0.5)),
                                           maxLines: 1,
                                           overflow: TextOverflow.fade,
-                                          duration: const Duration(seconds: 1),
+                                          duration: const Duration(milliseconds: 500),
                                           child: Text(
                                               viewModel
                                                   .moreNavigationControlsList[

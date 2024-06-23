@@ -29,7 +29,7 @@ class MapScreenMarker extends StatelessWidget {
                       valueListenable: viewModel.mapMarkersAnimationStarted,
                       builder: (context, mapMarkersAnimationStarted, _) =>
                           AnimatedContainer(
-                            duration: const Duration(seconds: 1),
+                            duration: const Duration(milliseconds: 500),
                             height: mapMarkersAnimationStarted ? 40.h : 0,
                             width: mapMarkersAnimationStarted
                                 ? (iconMarkers ? 40.w : 80.w)

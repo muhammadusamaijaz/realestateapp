@@ -33,7 +33,7 @@ class DashboardScreen extends StatelessWidget {
                           bottom: isBottomNavAnimatedStarted ? 20 : -100,
                           left: 30.w,
                           right: 30.w,
-                          duration: const Duration(seconds: 2),
+                          duration: const Duration(seconds: 1),
                           child: Container(
                             height: 70.h,
                             decoration: BoxDecoration(

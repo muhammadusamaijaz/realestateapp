@@ -18,8 +18,9 @@ class MapScreenVariantsController extends StatelessWidget {
             valueListenable: viewModel.controllerAnimationStarted,
             builder: (context, controllerAnimationStarted, _) =>
                 AnimatedContainer(
-                  duration: const Duration(seconds: 1),
-                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  duration: const Duration(milliseconds: 500),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: controllerAnimationStarted ? 15.w : 0),
                   width: controllerAnimationStarted ? 0.45.sw : 0,
                   height: controllerAnimationStarted ? 50.h : 0,
                   onEnd: () => viewModel.startMapMarkersAnimation(),
@@ -29,7 +30,7 @@ class MapScreenVariantsController extends StatelessWidget {
                   child: Row(
                     children: [
                       AnimatedContainer(
-                        duration: const Duration(seconds: 1),
+                        duration: const Duration(milliseconds: 500),
                         width: controllerAnimationStarted ? 18.w : 0,
                         height: controllerAnimationStarted ? 18.w : 0,
                         child: AssetImageLoader(
@@ -37,20 +38,26 @@ class MapScreenVariantsController extends StatelessWidget {
                                 injector<AppUIParams>().appAssets.listIconPng,
                             color: "#FFFFFF".toColor),
                       ),
-                      SizedBox(width: 10.w),
+                      AnimatedSize(
+                          duration: const Duration(milliseconds: 500),
+                          child: SizedBox(
+                              width: controllerAnimationStarted ? 10.w : 0)),
                       Expanded(
-                        child: AnimatedDefaultTextStyle(
-                            style: injector<AppTextStyles>()
-                                .semiBold14
-                                .copyWith(
-                                    fontSize:
-                                        controllerAnimationStarted ? 14 : 0,
-                                    color: "#FFFFFF".toColor),
-                            overflow: TextOverflow.fade,
-                            maxLines: 1,
-                            duration: const Duration(seconds: 1),
-                            child: const Text("List of variants",
-                                overflow: TextOverflow.fade)),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 500),
+                          child: AnimatedDefaultTextStyle(
+                              style: injector<AppTextStyles>()
+                                  .semiBold14
+                                  .copyWith(
+                                      fontSize:
+                                          controllerAnimationStarted ? 14 : 0,
+                                      color: "#FFFFFF".toColor),
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                              duration: const Duration(milliseconds: 500),
+                              child: const Text("List of variants",
+                                  overflow: TextOverflow.fade)),
+                        ),
                       ),
                     ],
                   ),
