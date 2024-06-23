@@ -51,13 +51,8 @@ class HomeScreenRoute extends GoRouteData {
 
   @override
   Page<Function> buildPage(BuildContext context, GoRouterState state) =>
-      CustomTransitionPage(
-          child: HomeScreen(appUIParams: injector()),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-              FadeTransition(
-                opacity: animation,
-                child: child,
-              ));
+      NoTransitionPage(
+          key: state.pageKey, child: HomeScreen(appUIParams: injector()));
 }
 
 class MapSearchScreenRoute extends GoRouteData {
@@ -68,8 +63,5 @@ class MapSearchScreenRoute extends GoRouteData {
       CustomTransitionPage(
           child: MapSearchScreen(appUIParams: injector()),
           transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-              FadeTransition(
-                opacity: animation,
-                child: child,
-              ));
+              FadeTransition(opacity: animation, child: child));
 }
