@@ -22,15 +22,21 @@ class HomeScreen extends StatelessWidget {
       onReady: (viewModel) => viewModel.onReady(),
       builder: (context, viewModel, _) => BaseWidget(
           useBaseWidgetPadding: false,
-          child: ListView(
+          child: Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 40.h),
               const HomeAppBar(),
-              SizedBox(height: 30.h),
-              const HomeScreenIntro(),
-              SizedBox(height: 30.h),
-              const HomeScreenStats(),
-              const HomeScreenAvailableHotels()
+              SizedBox(height: 10.h),
+              Expanded(
+                child: ListView(
+                  children: [
+                    const HomeScreenIntro(),
+                    SizedBox(height: 30.h),
+                    const HomeScreenStats(),
+                    const HomeScreenAvailableHotels()
+                  ],
+                ),
+              )
             ],
           )),
     );
